@@ -1,0 +1,26 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class BrowserSettings {
+
+		public enum MyDrivers
+		{
+			Chrome,
+			Firefox,
+			Iexplorer
+		}
+		
+		public static WebDriver CreateMyDriver (MyDrivers mydriver)
+		{
+			switch (mydriver) {
+			case Chrome:
+				return new ChromeDriver();
+			case Iexplorer:
+				return new InternetExplorerDriver();
+			default:
+				return new ChromeDriver();
+				
+			}
+		}
+}

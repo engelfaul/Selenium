@@ -1,0 +1,34 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class BrowserSettings {
+
+		public enum MyDrivers
+		{
+			Chrome,
+			Firefox,
+			Iexplorer
+		}
+		
+		public static WebDriver CreateMyDriver (MyDrivers mydriver)
+		{
+			switch (mydriver) {
+			case Chrome:
+				System.setProperty("webdriver.chrome.driver", "A:\\Selenium\\Drivers\\chrome\\chromedriver.exe");
+				return new ChromeDriver();
+			case Iexplorer:
+				return new InternetExplorerDriver();
+			default:
+				return new ChromeDriver();
+				
+			}
+		}
+		
+		public static void openYousePage()
+		{
+			WebDriver 	driver 	= CreateMyDriver(MyDrivers.Chrome);
+			String 		url 	= "https://www.youse.com.br/";
+			driver.get(url);
+		}
+}

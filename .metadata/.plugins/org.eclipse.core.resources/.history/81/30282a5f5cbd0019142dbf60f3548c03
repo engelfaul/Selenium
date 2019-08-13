@@ -1,0 +1,63 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class YouseTest {
+
+	
+	static YouseIndexElements yie = new YouseIndexElements();
+	static YouseSecondStepElements yse = new YouseSecondStepElements();
+	
+		public enum MyDrivers
+		{
+			Chrome,
+			Firefox,
+			Iexplorer
+		}
+		
+		public static WebDriver CreateMyDriver (MyDrivers mydriver)
+		{
+			switch (mydriver) {
+			case Chrome:
+				System.setProperty("webdriver.chrome.driver", "A:\\Selenium\\Drivers\\chrome\\chromedriver.exe");
+				return new ChromeDriver();
+			case Iexplorer:
+				return new InternetExplorerDriver();
+			default:
+				return new ChromeDriver();
+				
+			}
+		}
+		//Test1
+		public static void openYousePage() {
+			
+			
+			yie.setDriver(CreateMyDriver(MyDrivers.Chrome));
+			String url = "https://www.youse.com.br/";
+			
+			yie.getDriver().get(url);
+			
+			//yie.getDriver().close();
+			
+		}
+		
+		//Test2
+		public static void firstStepAuto() {
+			openYousePage();
+			yie.ClickElement(yie.btnOnlineContactAuto());
+			yie.WriteElement(yie.txtName(), "prueba");
+			yie.WriteElement(yie.txtEmail(), "prueba@prueba.com");
+			yie.WriteElement(yie.txtPhoneNumber(), "12345678901");
+			yie.ClickElement(yie.btnNextFirstStep());
+		}
+		
+		//Test3
+		public static void secondStepAuto() {
+			yie.WriteElement(yie.)
+			yie.ClickElement(yie.btnOnlineContactAuto());
+			yie.WriteElement(yie.txtName(), "prueba");
+			yie.WriteElement(yie.txtEmail(), "prueba@prueba.com");
+			yie.WriteElement(yie.txtPhoneNumber(), "12345678901");
+			yie.ClickElement(yie.btnNextFirstStep());
+		}
+}

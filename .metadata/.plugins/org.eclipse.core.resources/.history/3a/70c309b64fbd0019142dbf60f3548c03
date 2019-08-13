@@ -1,0 +1,67 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class YouseIndexElements {
+
+	private WebDriver driver;
+	
+	public WebDriver getDriver()
+	{
+		return driver;
+	}
+	
+	public void setDriver(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+	
+	
+	//******* Web Elements******///
+	//Return button Element Online Contact about "seguro auto"
+	public WebElement btnOnlineContactAuto()
+	{
+		return getDriver().findElement(By.cssSelector(".auto > a:nth-child(2)"));
+	}
+	
+	//Return button Element know more about "seguro auto"
+	public WebElement btnKnowMoreAuto()
+	{
+		return getDriver().findElement(By.cssSelector(".auto > a:nth-child(4)"));
+	}
+	
+	public WebElement txtName()
+	{
+		return getDriver().findElement(By.xpath("//*[@id='auto_order_flow_lead_person_data_lead_person_attributes_name']"));
+	}
+	
+	public WebElement txtEmail()
+	{
+		return getDriver().findElement(By.xpath("//*[@id='auto_order_flow_lead_person_data_lead_person_attributes_email']"));
+	}
+	
+	public WebElement txtPhoneNumber()
+	{
+		return getDriver().findElement(By.xpath("//*[@id='auto_order_flow_lead_person_data_lead_person_attributes_phone']"));
+	}
+	
+	
+	
+	
+	//******* Services *****//
+	public void ClickElement( WebElement element)
+	{
+		element.click();
+	}
+	
+	//TODO
+	public WebElement btnOnlineContactResidencial()
+	{
+		return getDriver().findElement(By.cssSelector(".auto > a:nth-child(2)"));
+	}
+	
+	public WebElement btnOnlineContactVida()
+	{
+		return getDriver().findElement(By.cssSelector(".auto > a:nth-child(2)"));
+	}
+}
